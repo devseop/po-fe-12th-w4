@@ -1,38 +1,14 @@
 import { useEffect, useState } from 'react';
-import './style.css';
-import { fetchData } from './api/api';
-import { ITimeSeriesData } from './types/types';
-
-import {
-  Chart as ChartJS,
-  LinearScale,
-  CategoryScale,
-  BarElement,
-  PointElement,
-  LineElement,
-  Legend,
-  Tooltip,
-  LineController,
-  BarController,
-  Filler,
-  ChartData,
-} from 'chart.js';
-import { Chart } from 'react-chartjs-2';
 import styled from '@emotion/styled';
-import { convertChartData } from './utls/convertChartData';
+import { ChartData } from 'chart.js';
+import { Chart } from 'react-chartjs-2';
+import './style.css';
 
-ChartJS.register(
-  LinearScale,
-  CategoryScale,
-  BarElement,
-  PointElement,
-  LineElement,
-  Legend,
-  Tooltip,
-  LineController,
-  BarController,
-  Filler,
-);
+import { fetchData } from './api/api';
+import './utls/registerChartJS';
+import { convertChartData } from './utls/convertChartData';
+import { ITimeSeriesData } from './types/types';
+import { customedChartOptions } from './utls/customedChartOption';
 
 interface IChartDataState extends ChartData<'bar' | 'line', ITimeSeriesData[]> {}
 
@@ -54,7 +30,7 @@ const App = () => {
 
   return (
     <Container>
-      <Chart type='bar' data={chartData} />
+      <Chart type='bar' data={chartData} options={customedChartOptions} />
     </Container>
   );
 };
