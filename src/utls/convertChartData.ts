@@ -10,7 +10,7 @@ import { IResponseData, ITimeSeriesData } from '../types/types';
 const returnToAreaDataset = (dataList: ITimeSeriesData[]) => {
   return {
     type: 'line' as const,
-    label: VALUE_AREA_KEY,
+    label: 'Line Chart',
     yAxisID: 'area',
     data: dataList,
     parsing: {
@@ -28,7 +28,7 @@ const returnToAreaDataset = (dataList: ITimeSeriesData[]) => {
 const returnToBarDataset = (dataList: ITimeSeriesData[]) => {
   return {
     type: 'bar' as const,
-    label: VALUE_BAR_KEY,
+    label: 'Bar Chart',
     yAxisID: 'bar',
     data: dataList,
     parsing: {
@@ -44,7 +44,6 @@ const returnToBarDataset = (dataList: ITimeSeriesData[]) => {
 
 export const convertChartData = (data: IResponseData) => {
   if (!data) return [];
-
   const dataList = Object.entries(data).map(([time, data]) => ({
     [X_AXIS_KEY]: time,
     [Y_AXIS_KEY]: data,
