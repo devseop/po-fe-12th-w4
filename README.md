@@ -20,16 +20,71 @@ npm start
 ### 프로젝트 구조
 
 ```markdown
-
+📦 src
+┣ 📂 api
+┃ ┗ api.ts
+┣ 📂 constants
+┃ ┗ constants.ts
+┣ 📂 types
+┃ ┗ types.ts
+┣ 📂 utls
+┃ ┣ convertChartData.ts
+┃ ┣ customedChartOption.ts
+┃ ┗ registerChartJS.ts
+┣ App.tsx
+┣ main.tsx
+┣ style.css
+┗ vite-env.d.ts
 ```
 
 ### 사용 라이브러리
 
 ```javascript
+"dependencies": {
+    "@emotion/styled": "^11.11.0",
+    "chart.js": "^4.4.0",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0"
+  },
+
+"devDependencies": {
+    "eslint": "^8.45.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
 
 ```
 
 ## 📝 구현 내용
+
+### ✅ Assignment 1
+
+시계열 차트 만들기
+
+- 주어진 JSON 데이터의 `key`값(시간)을 기반으로 시계열 차트를 만들어주세요
+- 하나의 차트안에 Area 형태의 그래프와 Bar 형태의 그래프가 모두 존재하는 복합 그래프로 만들어주세요
+- Area 그래프의 기준값은 `value_area` 값을 이용해주세요
+- Bar 그래프의 기준값은 `value_bar` 값을 이용해주세요
+- 차트의 Y축에 대략적인 수치를 표현해주세요
+
+### ✅ Assignment 2
+
+호버 기능 구현
+
+- 특정 데이터 구역에 마우스 호버시 `id, value_area, value_bar` 데이터를 툴팁 형태로 제공해주세요
+
+### ✅ Assignment 3
+
+필터링 기능 구현
+
+- 필터링 기능을 구현해주세요, 필터링은 특정 데이터 구역을 하이라이트 하는 방식으로 구현해주세요
+- 필터링 기능은 버튼 형태로 ID값(지역이름)을 이용해주세요
+- 필터링 시 버튼에서 선택한 ID값과 동일한 ID값을 가진 데이터 구역만 하이라이트 처리를 해주세요
+- 특정 데이터 구역을 클릭 시에도 필터링 기능과 동일한 형태로 동일한 ID값을 가진 데이터 구역을 하이라이트해주세요
 
 ## 🫱🏻‍🫲🏿 Commit Convention
 
