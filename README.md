@@ -1,27 +1,52 @@
-# React + TypeScript + Vite
+# 원티드 프리온보딩 12th 4주차 개인 과제
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+원티드 프리온보딩 12th 4주차에 진행된 개인 과제입니다.
 
-Currently, two official plugins are available:
+본 과제는 mock data를 이용해 시계열 차트를 구현하는 것이 목표입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧑🏻‍💻 프로젝트 정보
 
-## Expanding the ESLint configuration
+### 실행 방법
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 배포 링크:
+- 링크가 실행되지 않는 경우 아래 명령어를 차례대로 입력하여 실행해주세요.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+git clone https://github.com/devseop/po-fe-12th-w4
+npm install
+npm start
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 프로젝트 구조
+
+```markdown
+
+```
+
+### 사용 라이브러리
+
+```javascript
+
+```
+
+## 📝 구현 내용
+
+## 🫱🏻‍🫲🏿 Commit Convention
+
+커밋 컨벤션과 브랜치 전략은 1주차 팀 과제 진행시 결정된 팀 컨벤션을 따랐습니다.
+
+e.g. FEAT: 로그인 유효성 검증 기능 구현
+
+| 태그      | 설명 (한국어로만 작성하기)                                     |
+| --------- | -------------------------------------------------------------- |
+| FEAT:     | 새로운 기능 추가 (변수명 변경 포함)                            |
+| FIX:      | 버그 해결                                                      |
+| DESIGN:   | CSS 등 사용자 UI 디자인 변경                                   |
+| STYLE:    | 코드 포맷 변경, 세미 콜론 누락, 코드 수정이 없는 경우          |
+| REFACTOR: | 프로덕션 코드 리팩토링                                         |
+| COMMENT:  | 필요한 주석 추가 및 변경                                       |
+| DOCS:     | 문서를 수정한 경우                                             |
+| CHORE:    | 빌드 테스크 업데이트, 패키지 매니저 설정(프로덕션 코드 변경 X) |
+| RENAME:   | 파일 혹은 폴더명을 수정하거나 옮기는 작업                      |
+| REMOVE:   | 파일을 삭제하는 작업만 수행한 경우                             |
+| INIT:     | 초기 커밋을 진행한 경우                                        |
