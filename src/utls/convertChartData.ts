@@ -18,8 +18,8 @@ const returnToAreaDataset = (dataList: ITimeSeriesData[]) => {
       yAxisKey: `${Y_AXIS_KEY}.${VALUE_AREA_KEY}`,
     },
     borderWidth: 2,
-    borderColor: COLORS.red.base,
-    backgroundColor: COLORS.red.dimmed,
+    borderColor: COLORS.green.base,
+    backgroundColor: COLORS.green.dimmed,
     fill: true,
     order: 1,
   };

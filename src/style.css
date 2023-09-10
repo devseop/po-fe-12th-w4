@@ -4,7 +4,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: rgba(255, 255, 255, 0.87);
   font-family:
     'Pretendard Variable',
     Pretendard,
@@ -29,7 +28,7 @@
 }
 
 body {
-  background-color: #242424;
+  background-color: #2d2d2d;
 }
 
 ul {
