@@ -1,17 +1,22 @@
-import { VALUE_AREA, VALUE_BAR } from '../constants/constants';
+import { VALUE_AREA_KEY, VALUE_BAR_KEY, X_AXIS_KEY, Y_AXIS_KEY } from '../constants/constants';
 
 export type ILocationData = {
   id: string;
-  [VALUE_AREA]: number;
-  [VALUE_BAR]: number;
+  [VALUE_AREA_KEY]: number;
+  [VALUE_BAR_KEY]: number;
+};
+
+export type ITimeSeriesData = {
+  [X_AXIS_KEY]: string;
+  [Y_AXIS_KEY]: ILocationData;
 };
 
 export type ILocationDateKey = string;
 
-export type TimeSeriesData = Record<ILocationDateKey, ILocationData>;
+export type IResponseData = Record<ILocationDateKey, ILocationData>;
 
 export type IResponseType = {
   type: string;
   version: number;
-  response: TimeSeriesData;
+  response: IResponseData;
 };

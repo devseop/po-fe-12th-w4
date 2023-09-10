@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 import { fetchData } from './api/api';
-import { IResponseType, TimeSeriesData } from './types/types';
-import { VALUE_AREA, VALUE_BAR, X_AXIS, Y_AXIS } from './constants/constants';
+import { ITimeSeriesData } from './types/types';
 
 import {
   Chart as ChartJS,
@@ -16,9 +15,11 @@ import {
   LineController,
   BarController,
   Filler,
+  ChartData,
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 import styled from '@emotion/styled';
+import { convertChartData } from './utls/convertChartData';
 
 ChartJS.register(
   LinearScale,
@@ -33,26 +34,16 @@ ChartJS.register(
   Filler,
 );
 
+interface IChartDataState extends ChartData<'bar' | 'line', ITimeSeriesData[]> {}
+
 const App = () => {
-  const [data, setData] = useState<TimeSeriesData | unknown>();
-
-  const chartDataConvertHandler = (data: IResponseType) => {
-    if (!data) return [];
-    const result = Object.entries(data).map(([time, data]) => ({
-      [X_AXIS]: time,
-      [Y_AXIS]: data,
-    }));
-
-    return result;
-  };
+  const [chartData, setchartData] = useState<IChartDataState>({ datasets: [] });
 
   useEffect(() => {
     const laodData = async () => {
       try {
         const res = await fetchData();
-        const convertedData = chartDataConvertHandler(res);
-        // console.log(convertedData)
-        setData(convertedData);
+        setchartData(convertChartData(res) as IChartDataState);
       } catch (err) {
         console.error(err);
       }
@@ -60,38 +51,6 @@ const App = () => {
 
     laodData();
   }, []);
-
-  const chartData = {
-    datasets: [
-      {
-        type: 'line' as const,
-        label: VALUE_AREA,
-        yAxisID: 'area',
-        data: data,
-        parsing: {
-          xAxisKey: X_AXIS,
-          yAxisKey: `${Y_AXIS}.${VALUE_AREA}`,
-        },
-        borderWidth: 2,
-        borderColor: 'rgba(255, 99, 132, 0.8)',
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        fill: true,
-        order: 1,
-      },
-      {
-        type: 'bar' as const,
-        label: VALUE_BAR,
-        yAxisID: 'bar',
-        data: data,
-        parsing: {
-          xAxisKey: X_AXIS,
-          yAxisKey: `${Y_AXIS}.${VALUE_BAR}`,
-        },
-        backgroundColor: 'rgb(75, 192, 192)',
-        order: 2,
-      },
-    ],
-  };
 
   return (
     <Container>
