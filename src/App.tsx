@@ -8,6 +8,7 @@ import { customedChartOptions } from './utls/customedChartOption';
 import { ITimeSeriesData } from './types/types';
 import { useChartData } from './hooks/useChartData';
 import { FilterButtons } from './components/FilterButtons';
+import { ChartHeader } from './components/ChartHeader';
 
 export interface IChartDataState extends ChartData<'bar' | 'line', ITimeSeriesData[]> {}
 
@@ -23,11 +24,9 @@ const App = () => {
     );
   }
 
-  console.log(uniqueIds);
-
   return (
     <Container>
-      <h1>서울특별시 자치구 시계열 차트</h1>
+      <ChartHeader />
       <FilterButtons uniqueIds={uniqueIds} />
       <Chart type='bar' data={chartData} options={customedChartOptions} />
     </Container>
@@ -38,12 +37,6 @@ const Container = styled.div`
   max-width: 1280px;
   padding: 0 20px;
   margin: 80px auto 0;
-
-  h1 {
-    color: white;
-    font-size: 40px;
-    margin: 0 0 40px 40px;
-  }
 `;
 
 const Loading = styled.div`
