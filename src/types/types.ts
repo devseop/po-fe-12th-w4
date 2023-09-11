@@ -13,7 +13,10 @@ export type ITimeSeriesData = {
 
 export type ILocationDateKey = string;
 
-export type IResponseData = Record<ILocationDateKey, ILocationData>;
+export type IResponseData = {
+  [k: ILocationDateKey]: ILocationData;
+};
+// Record<ILocationDateKey, ILocationData>;
 
 export type IResponseType = {
   type: string;
