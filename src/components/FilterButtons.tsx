@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { COLORS } from '../constants/constants';
 
 export const FilterButtons = ({ uniqueIds }: { uniqueIds: string[] }) => {
   return (
@@ -12,7 +13,7 @@ export const FilterButtons = ({ uniqueIds }: { uniqueIds: string[] }) => {
 
 const Container = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 12px;
   justify-content: flex-start;
   margin-bottom: 24px;
   margin-left: 40px;
@@ -23,9 +24,21 @@ const Button = styled.button`
 
   color: white;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1;
 
   border: none;
   border-radius: 8px;
-  background-color: #505050;
+  background-color: ${COLORS.gray.base};
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${COLORS.gray.dimmed};
+  }
+
+  &:focus {
+    font-weight: 700;
+    background-color: ${COLORS.blue.base};
+  }
 `;
