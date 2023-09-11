@@ -23,6 +23,9 @@ npm start
 📦 src
 ┣ 📂 api
 ┃ ┗ api.ts
+┣ 📂 components
+┃ ┣ ChartHeader.tsx
+┃ ┗ FilterButtons.tsx
 ┣ 📂 constants
 ┃ ┗ constants.ts
 ┣ 📂 types
