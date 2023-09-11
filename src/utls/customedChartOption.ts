@@ -8,6 +8,7 @@ interface ICustomedChartsTooltip extends TooltipItem<'bar' | 'line'> {
 
 export const customedChartOptions = {
   responsive: true,
+  radius: 0,
   interaction: {
     mode: 'index' as const,
     intersect: false,
@@ -25,6 +26,7 @@ export const customedChartOptions = {
       display: true,
       position: 'right' as const,
       title: { display: true, text: 'Bar' },
+      beginAtzero: true,
     },
   },
   parsing: {
