@@ -7,6 +7,7 @@ export const Y_AXIS_KEY = 'y';
 export const COLORS = {
   green: { base: 'rgba(49, 184, 105, 1)', dimmed: 'rgba(49, 184, 105, 0.2)' },
   blue: { base: 'rgba(40, 121, 255, 1)', dimmed: 'rgba(40, 121, 255, 0.4)' },
+  gray: { base: 'rgba(80, 80, 80, 1)', dimmed: 'rgba(80, 80, 80, 0.8)' },
 } as const;
 
 export const AREA_CHART_SCALE_MAX = 200; //bar 차트와 겹치지 않도록 하기 위함
