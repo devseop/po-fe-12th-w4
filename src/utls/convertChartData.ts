@@ -44,11 +44,11 @@ const returnToBarDataset = (dataList: ITimeSeriesData[]) => {
 
 export const convertChartData = (data: IResponseData) => {
   if (!data) return [];
+
   const dataList = Object.entries(data).map(([time, data]) => ({
     [X_AXIS_KEY]: time,
     [Y_AXIS_KEY]: data,
   }));
-
   return {
     datasets: [returnToAreaDataset(dataList), returnToBarDataset(dataList)],
   };
