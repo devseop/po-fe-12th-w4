@@ -1,14 +1,15 @@
 import styled from '@emotion/styled';
 import { ChartData } from 'chart.js';
-import { Chart } from 'react-chartjs-2';
 import './style.css';
 
+import { FilterButtons } from './components/FilterButtons';
+import { ChartHeader } from './components/ChartHeader';
+import { TimeSeriesChart } from './components/TimeSeriesChart';
+
+import { useChartData } from './hooks/useChartData';
 import './utls/registerChartJS';
 import { customedChartOptions } from './utls/customedChartOption';
 import { ITimeSeriesData } from './types/types';
-import { useChartData } from './hooks/useChartData';
-import { FilterButtons } from './components/FilterButtons';
-import { ChartHeader } from './components/ChartHeader';
 
 export interface IChartDataState extends ChartData<'bar' | 'line', ITimeSeriesData[]> {}
 
@@ -28,7 +29,7 @@ const App = () => {
     <Container>
       <ChartHeader />
       <FilterButtons uniqueIds={uniqueIds} />
-      <Chart type='bar' data={chartData} options={customedChartOptions} />
+      <TimeSeriesChart chartData={chartData} chartOptions={customedChartOptions} />
     </Container>
   );
 };
