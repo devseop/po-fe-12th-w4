@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { ChartData } from 'chart.js';
-import './style.css';
+import { Global } from '@emotion/react';
+import { globalStyles } from './styles/globalStyles';
 
 import { FilterButtons } from './components/FilterButtons';
 import { ChartHeader } from './components/ChartHeader';
@@ -26,11 +27,14 @@ const App = () => {
   }
 
   return (
-    <Container>
-      <ChartHeader />
-      <FilterButtons uniqueIds={uniqueIds} />
-      <TimeSeriesChart chartData={chartData} chartOptions={customedChartOptions} />
-    </Container>
+    <>
+      <Global styles={globalStyles} />
+      <Container>
+        <ChartHeader />
+        <FilterButtons uniqueIds={uniqueIds} />
+        <TimeSeriesChart chartData={chartData} chartOptions={customedChartOptions} />
+      </Container>
+    </>
   );
 };
 
