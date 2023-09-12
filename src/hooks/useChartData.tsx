@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { IChartDataState } from '../App';
 import { fetchData } from '../api/api';
-import { convertChartData } from '../utls/convertChartData';
-import { getUniqueIds } from '../utls/getUniqueIds';
+import { convertChartData } from '../utils/convertChartData';
+import { getUniqueIds } from '../utils/getUniqueIds';
 
 export const useChartData = () => {
   const [chartData, setchartData] = useState<IChartDataState>({ datasets: [] });

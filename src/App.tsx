@@ -7,8 +7,8 @@ import { ChartHeader } from './components/ChartHeader';
 import { TimeSeriesChart } from './components/TimeSeriesChart';
 
 import { useChartData } from './hooks/useChartData';
-import './utls/registerChartJS';
-import { customedChartOptions } from './utls/customedChartOption';
+import './utils/registerChartJS';
+import { customedChartOptions } from './utils/customedChartOption';
 import { ITimeSeriesData } from './types/types';
 
 export interface IChartDataState extends ChartData<'bar' | 'line', ITimeSeriesData[]> {}
