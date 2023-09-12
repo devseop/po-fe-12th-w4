@@ -2,7 +2,7 @@ import { IResponseData } from '../types/types';
 
 export const fetchData = async (): Promise<IResponseData> => {
   try {
-    const res = await fetch('public/mock/mock_data.json');
+    const res = await fetch('/mock_data.json');
     if (!res.ok) {
       throw new Error('Network response was not ok');
     }
