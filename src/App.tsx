@@ -1,13 +1,11 @@
 import styled from '@emotion/styled';
 import { ChartData } from 'chart.js';
-import { Global } from '@emotion/react';
-import { globalStyles } from './styles/globalStyles';
 
 import { FilterButtons } from './components/FilterButtons';
 import { ChartHeader } from './components/ChartHeader';
 import { TimeSeriesChart } from './components/TimeSeriesChart';
 
-import { useChartData } from './hooks/useChartData';
+import { useChartData } from './hooks/useData';
 import './utils/registerChartJS';
 import { customedChartOptions } from './utils/customedChartOption';
 import { ITimeSeriesData } from './types/types';
@@ -28,7 +26,6 @@ const App = () => {
 
   return (
     <>
-      <Global styles={globalStyles} />
       <Container>
         <ChartHeader />
         <FilterButtons uniqueIds={uniqueIds} />
