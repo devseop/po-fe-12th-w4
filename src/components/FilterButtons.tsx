@@ -50,17 +50,12 @@ const Button = styled.button<{ isActive: boolean }>`
 
   cursor: pointer;
 
-  /* &:hover {
-    background-color: ${COLORS.gray.dimmed};
+  ${(props) =>
+    !props.isActive &&
+    `
+    &:hover {
+    background-color: ${COLORS.blue.dimmed};
+    box-shadow: 0 0 0 1px ${COLORS.blue.base} inset;
   }
-
-  &:focus {
-    font-weight: 700;
-    background-color: ${COLORS.blue.base};
-  }
-
-  &:active {
-    font-weight: 700;
-    background-color: ${COLORS.blue.base};
-  } */
+  `}
 `;
