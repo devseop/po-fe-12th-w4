@@ -17,9 +17,14 @@ const returnToAreaDataset = (dataList: ITimeSeriesData[]) => {
       xAxisKey: X_AXIS_KEY,
       yAxisKey: `${Y_AXIS_KEY}.${VALUE_AREA_KEY}`,
     },
+    tension: 0.2,
     borderWidth: 2,
     borderColor: COLORS.green.base,
     backgroundColor: COLORS.green.dimmed,
+    pointBorderWidth: 0,
+    pointHoverBorderWidth: 2,
+    pointHoverBorderColor: COLORS.green.base,
+    pointHoverBackgroundColor: COLORS.green.base,
     fill: true,
     order: 1,
   };
@@ -35,6 +40,7 @@ const returnToBarDataset = (dataList: ITimeSeriesData[]) => {
       xAxisKey: X_AXIS_KEY,
       yAxisKey: `${Y_AXIS_KEY}.${VALUE_BAR_KEY}`,
     },
+    borderColor: COLORS.blue.base,
     backgroundColor: COLORS.blue.dimmed,
     hoverBorderColor: COLORS.blue.base,
     hoverBackgroundColor: COLORS.blue.base,
@@ -49,6 +55,7 @@ export const convertChartData = (data: IResponseData) => {
     [X_AXIS_KEY]: time,
     [Y_AXIS_KEY]: data,
   }));
+
   return {
     datasets: [returnToAreaDataset(dataList), returnToBarDataset(dataList)],
   };
