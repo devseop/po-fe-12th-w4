@@ -90,7 +90,7 @@ npm install && npm start
 <details>
   <summary>코드 보기</summary>
     - 데이터 호출
-    https://github.com/devseop/po-fe-12th-w4/blob/165c9b04636e3d5f06786ffd90e40a355d1765e4/src/hooks/useData.tsx#L86-L101
+    https://github.com/devseop/po-fe-12th-w4/blob/de2f1ca1e81c29a25c721ca9d86696b50a36aafd/src/hooks/useData.tsx#L84-L98
     - 데이터를 {x(시간), y(값)}의 형태로 재분류
     https://github.com/devseop/po-fe-12th-w4/blob/165c9b04636e3d5f06786ffd90e40a355d1765e4/src/utils/convertChartData.ts#L51-L62
 </details>
