@@ -38,10 +38,10 @@ const App = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.main`
   max-width: 1280px;
-  padding: 0 20px;
   margin: 80px auto 0;
+  padding-right: 20px;
 `;
 
 export default App;

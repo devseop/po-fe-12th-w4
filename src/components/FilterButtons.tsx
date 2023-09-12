@@ -28,7 +28,7 @@ export const FilterButtons = ({ uniqueIds }: { uniqueIds: string[] }) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.nav`
   display: flex;
   gap: 12px;
   justify-content: flex-start;

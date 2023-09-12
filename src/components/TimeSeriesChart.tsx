@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import styled from '@emotion/styled';
 import { ChartData, ChartOptions } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 import { ITimeSeriesData } from '../types/types';
@@ -14,8 +15,16 @@ interface ITimeSeriesChart {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const TimeSeriesChart = forwardRef<any, ITimeSeriesChart>(
   ({ chartData, chartOptions, onClick }, ref) => {
-    return <Chart type='bar' data={chartData} options={chartOptions} onClick={onClick} ref={ref} />;
+    return (
+      <Figure>
+        <Chart type='bar' data={chartData} options={chartOptions} onClick={onClick} ref={ref} />
+      </Figure>
+    );
   },
 );
 
 TimeSeriesChart.displayName = 'TimeSeriesChart';
+
+const Figure = styled.figure`
+  margin-left: 40px;
+`;
