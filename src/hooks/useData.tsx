@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Chart as ChartJS, InteractionItem } from 'chart.js';
 
-import { fetchData } from '../api/api';
+// import { fetchData } from '../api/api';
 import { useFilter } from './useFilter';
 import { convertChartData } from '../utils/convertChartData';
 import { filteredChartStyle } from '../utils/filteredChartStyle';
@@ -9,6 +9,8 @@ import { getUniqueIds } from '../utils/getUniqueIds';
 
 import { IChartDataState } from '../App';
 import { getElementsAtEvent } from 'react-chartjs-2';
+
+import * as mockData from '../../public/mock_data.json';
 
 export const useData = () => {
   const { filteringTheKey, setFilteringTheKey } = useFilter();
@@ -82,10 +84,11 @@ export const useData = () => {
 
   // API 호출, res를 이용하여 chartData, uniqueIds 설정
   useEffect(() => {
-    const laodData = async () => {
+    const laodData = () => {
       try {
         setIsLoading(true);
-        const res = await fetchData();
+        // const res = await fetchData();
+        const res = mockData.response;
         setchartData(convertChartData(res) as IChartDataState);
         setUniqueIds(getUniqueIds(res));
         setIsLoading(false);
