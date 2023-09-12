@@ -8,13 +8,12 @@
 
 ### 실행 방법
 
-- 배포 링크:
+- 배포 링크: [Time Series Chart (https://devseop-timeseries-chart.netlify.app/)](https://devseop-timeseries-chart.netlify.app/)
 - 링크가 실행되지 않는 경우 아래 명령어를 차례대로 입력하여 실행해주세요.
 
 ```
 git clone https://github.com/devseop/po-fe-12th-w4
-npm install
-npm start
+npm install && npm start
 ```
 
 ### 프로젝트 구조
@@ -25,18 +24,25 @@ npm start
 ┃ ┗ api.ts
 ┣ 📂 components
 ┃ ┣ ChartHeader.tsx
-┃ ┗ FilterButtons.tsx
+┃ ┣ FilterButtons.tsx
+┃ ┗ TimeSeriesChart.tsx
 ┣ 📂 constants
 ┃ ┗ constants.ts
+┣ 📂 hooks
+┃ ┣ useData.tsx
+┃ ┗ useFilter.tsx
+┣ 📂 styles
+┃ ┗ globalStyles.ts
 ┣ 📂 types
 ┃ ┗ types.ts
-┣ 📂 utls
+┣ 📂 utils
 ┃ ┣ convertChartData.ts
 ┃ ┣ customedChartOption.ts
+┃ ┣ filteredChartStyle.ts
+┃ ┣ getUniqueIds.ts
 ┃ ┗ registerChartJS.ts
 ┣ App.tsx
 ┣ main.tsx
-┣ style.css
 ┗ vite-env.d.ts
 ```
 
@@ -44,14 +50,17 @@ npm start
 
 ```javascript
 "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "chart.js": "^4.4.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0"
   },
 
 "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^8.45.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
