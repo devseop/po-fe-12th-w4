@@ -72,9 +72,11 @@ npm install && npm start
 ```
 
 ## 📝 구현 내용
-![chart_1](https://github.com/devseop/po-fe-12th-w4/assets/102455161/2bfe23da-4fa5-4bec-b415-65ee8a0af9ca)
-![chart_2](https://github.com/devseop/po-fe-12th-w4/assets/102455161/4eba53ba-ed3d-4bc1-8b73-5a0dee153a62)
 
+<div style="display: grid; grid-template-columns: 1fr 1fr;">
+    <img style="width: 500px;" src='https://github.com/devseop/po-fe-12th-w4/assets/102455161/2bfe23da-4fa5-4bec-b415-65ee8a0af9ca' />
+    <img style="width: 500px;" src='https://github.com/devseop/po-fe-12th-w4/assets/102455161/4eba53ba-ed3d-4bc1-8b73-5a0dee153a62' />
+</div>
 
 ### ✅ Assignment 1
 
