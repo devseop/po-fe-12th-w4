@@ -93,8 +93,11 @@ npm install && npm start
     <ul>
         <li>데이터 호출</li>
             https://github.com/devseop/po-fe-12th-w4/blob/de2f1ca1e81c29a25c721ca9d86696b50a36aafd/src/hooks/useData.tsx#L84-L98
-        <li>데이터를 {x(시간), y(값)}의 형태로 재분류</li>
+        <li>key값(시간)을 기준으로 데이터를 재분류</li>
             https://github.com/devseop/po-fe-12th-w4/blob/165c9b04636e3d5f06786ffd90e40a355d1765e4/src/utils/convertChartData.ts#L51-L62
+        <li>Area, Bar 형태가 동시에 존재하는 그래프로 데이터를 컴포넌트에 전달, 렌더링</li>
+            https://github.com/devseop/po-fe-12th-w4/blob/d10fbfcd416d774120774f61fc3697e74928d647/src/utils/convertChartData.ts#L10-L49
+            https://github.com/devseop/po-fe-12th-w4/blob/d10fbfcd416d774120774f61fc3697e74928d647/src/components/TimeSeriesChart.tsx#L15-L26
     </ul>
 </details>
 
@@ -105,7 +108,10 @@ npm install && npm start
 - 특정 데이터 구역에 마우스 호버시 `id, value_area, value_bar` 데이터를 툴팁 형태로 제공해주세요
 ```
 
-> `Chart.js`에서는 기본적으로 마우스 호버시 타이틀(시간), 값(value)을 볼 수 있습니다.  <br /> 세부옵션인 `tooltip`의 `afterTitle` 옵션을 이용하여 타이틀 바로 다음에 `id`가 제공되도록 했고,  <br /> 인자로 전달 받은 tooltipItems를 구조분해하여 원하는 값인 `id`를 반환하도록 했습니다. <br /> 타입은 `Chart.js`의 `TooltipItem` 타입을 확장하여 사용했습니다.
+> `Chart.js`에서는 기본적으로 마우스 호버시 타이틀(시간), 값(value)을 볼 수 있습니다.  <br />
+> 세부옵션인 `tooltip`의 `afterTitle` 옵션을 이용하여 타이틀 바로 다음에 `id`가 제공되도록 했고,  <br />
+> 인자로 전달 받은 tooltipItems를 구조분해하여 원하는 값인 `id`를 반환하도록 했습니다. <br />
+> 타입은 `Chart.js`의 `TooltipItem` 타입을 확장하여 사용했습니다. ([types/index.d.ts:2893](https://github.com/chartjs/Chart.js/blob/7ccd4a2/src/types/index.d.ts#L2893))
 
 <details>
   <summary>코드 보기</summary>
